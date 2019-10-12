@@ -1,0 +1,19 @@
+
+
+<h2>My Heroes</h2>
+<ul class="heroes" *ngIf="heroes">
+  <li *ngFor="let hero of heroes; let i = index;"
+      [class.selected]="hero === selectedHero">
+    <a routerLink="/detail/{{hero.id}}">
+    <span class="badge">
+        {{i}}
+    </span>
+      {{hero.name}}
+    </a>
+    <button class="delete"
+            title="delete hero"
+      (click)="deleteHero(hero)">X</button>
+  </li>
+</ul>
+
+<app-hero-detail></app-hero-detail>
